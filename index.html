@@ -766,6 +766,17 @@
           </article>
 
           <article class="sample-slide">
+            <img src="assets/slide-super-resolution.png" alt="Super-resolution enhancement and segmentation pipeline slide">
+            <div class="slide-copy">
+              <span class="sample-type">Computer Vision · Super-Resolution</span>
+              <h4>Super-Resolution and Segmentation</h4>
+              <p>Edge-aware image enhancement pipeline for recovering fine visual detail while preserving segmentation-ready structure, with ONNX deployment planning and latency-aware model design.</p>
+              <div class="sample-results"><span><strong>2x</strong> resolution</span><span><strong>95%</strong> IoU target</span><span><strong>30%</strong> latency cut</span></div>
+              <div class="sample-tags"><span>Super-resolution</span><span>Segmentation</span><span>Attention</span><span>ONNX</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
             <img src="assets/slide-llm-text-detection.png" alt="AI generated text detection slide">
             <div class="slide-copy">
               <span class="sample-type">LLMs · Robust Classification</span>
@@ -866,7 +877,7 @@
     function moveSampleSlide(direction) {
       if (!sampleTrack) return;
       var slide = sampleTrack.querySelector('.sample-slide');
-      var step = slide ? slide.offsetWidth + 22 : sampleTrack.clientWidth * 0.9;
+      var step = slide ? slide.offsetWidth : sampleTrack.clientWidth;
       sampleTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
     }
 
