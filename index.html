@@ -656,190 +656,151 @@
 
   <section id="sample-work" class="sample-work-section">
     <div class="container">
-      <div class="section-kicker">Selected builds and applied research</div>
+      <div class="section-kicker">Selected AI, CV, GeoAI and product work</div>
       <div class="sample-heading">
         <div>
           <h2>Sample Work</h2>
-          <p>Projects below emphasize working systems, measured results, and deployment thinking: computer vision, AI products, automation, agriculture, and industrial inspection.</p>
+          <p>Swipe through applied AI, computer vision, LLM, GeoAI, industrial inspection and product work. Each slide is built from real result assets or live product screens, with the practical outcome called out directly.</p>
         </div>
         <a class="sample-site-link" href="https://talktoclient.com/" target="_blank">Visit TalkToClient</a>
       </div>
 
       <div class="sample-tech-ribbon">
-        <span>Azure ML / Data Factory patterns</span>
+        <span>Azure-ready data pipelines</span>
         <span>GitHub Actions CI/CD</span>
         <span>Dockerized demos</span>
         <span>ONNX / TensorRT deployment path</span>
         <span>GPU inference profiling</span>
       </div>
 
-      <div class="sample-grid sample-grid-featured">
-        <article class="sample-card sample-card-featured">
-          <img src="assets/sample-talktoclient.png" alt="TalkToClient AI CRM website screenshot">
-          <div class="sample-body">
-            <span class="sample-type">Live Product · AI CRM Platform</span>
-            <h4>TalkToClient</h4>
-            <p>AI CRM platform for growing businesses: omnichannel inbox, AI voice agent, scheduling, pipeline forecasting, workflow automation, and integrations across business tools.</p>
-            <div class="sample-results">
-              <span><strong>100+</strong> languages</span>
-              <span><strong>24/7</strong> AI answering</span>
-              <span><strong>5 min</strong> setup</span>
+      <div class="sample-carousel" aria-label="Sample work carousel">
+        <button class="carousel-btn carousel-prev" type="button" onclick="moveSampleSlide(-1)" aria-label="Previous project">&#8249;</button>
+        <div class="sample-track" id="sample-track">
+          <article class="sample-slide">
+            <img src="assets/slide-sga-field-boundary.png" alt="SGA RGB orthomosaic field boundary detection output">
+            <div class="slide-copy">
+              <span class="sample-type">GeoAI · RGB Orthomosaic Delineation</span>
+              <h4>SGA Field Boundary Detection</h4>
+              <p>Domain-adapted nnU-Net pipeline for high-resolution drone/satellite orthomosaics, producing masks, overlays and GeoJSON polygon vectors for field-boundary delineation across five scenes.</p>
+              <div class="sample-results"><span><strong>5</strong> scenes</span><span><strong>nnU-Net</strong> model</span><span><strong>GeoJSON</strong> vectors</span></div>
+              <div class="sample-tags"><span>GeoAI</span><span>Segmentation</span><span>Multi-scale inference</span><span>Azure-ready</span></div>
             </div>
-            <div class="sample-tags"><span>AI Voice</span><span>CRM</span><span>Automation</span><span>Integrations</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img src="assets/sample-fieldsafe-agri.png" alt="FieldSafe agriculture training dashboard screenshot">
-          <div class="sample-body">
-            <span class="sample-type">Agriculture · Computer Vision</span>
-            <h4>PTX / FieldSafe Agri</h4>
-            <p>ML lifecycle demo for agricultural robot safety: detects people, tractors, and animals; packages dashboard inference, ROS2 interfaces, Docker workflow, and deployment notes.</p>
-            <div class="sample-results">
-              <span><strong>0.954</strong> mAP50</span>
-              <span><strong>0.896</strong> mAP50-95</span>
-              <span><strong>5.0 ms</strong> latency</span>
+          <article class="sample-slide">
+            <img src="assets/slide-talktoclient.png" alt="TalkToClient live AI CRM website slide">
+            <div class="slide-copy">
+              <span class="sample-type">Live Product · AI CRM</span>
+              <h4>TalkToClient</h4>
+              <p>AI CRM platform for service businesses: omnichannel inbox, AI voice agent, workflow automation, scheduling, follow-up and pipeline forecasting in a production-facing website.</p>
+              <div class="sample-results"><span><strong>100+</strong> languages</span><span><strong>24/7</strong> AI answering</span><span><strong>5 min</strong> setup</span></div>
+              <div class="sample-tags"><span>AI Voice</span><span>CRM</span><span>Automation</span><span>Integrations</span></div>
             </div>
-            <div class="sample-tags"><span>YOLO11s</span><span>ROS2</span><span>Docker</span><span>GPU</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img src="assets/sample-fish-biomass.png" alt="Fish biomass estimation bounding box result">
-          <div class="sample-body">
-            <span class="sample-type">Aquaculture · Biomass Estimation</span>
-            <h4>Fish Biomass Estimation</h4>
-            <p>Underwater fish detection and calibrated biomass prototype using YOLO-based localization, geometric measurement, uncertainty reporting, and a clear calibration boundary.</p>
-            <div class="sample-results">
-              <span><strong>0.995</strong> mAP50</span>
-              <span><strong>0.937</strong> mAP50-95</span>
-              <span><strong>0.998</strong> recall</span>
+          <article class="sample-slide">
+            <img src="assets/slide-fieldsafe-agri.png" alt="FieldSafe agriculture perception dashboard slide">
+            <div class="slide-copy">
+              <span class="sample-type">Agriculture · Robot Safety Perception</span>
+              <h4>PTX / FieldSafe Agri</h4>
+              <p>YOLO-based agricultural safety demo that detects people, tractors and animals, with dashboard inference, ROS2 interfaces, Docker packaging and embedded deployment notes.</p>
+              <div class="sample-results"><span><strong>0.954</strong> mAP50</span><span><strong>0.896</strong> mAP50-95</span><span><strong>5 ms</strong> latency</span></div>
+              <div class="sample-tags"><span>YOLO11s</span><span>ROS2</span><span>Docker</span><span>GPU</span></div>
             </div>
-            <div class="sample-tags"><span>YOLO11</span><span>OpenCV</span><span>Uncertainty</span><span>ONNX-ready path</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img src="assets/sample-fish-tracking.png" alt="Fish tracking annotated video frame">
-          <div class="sample-body">
-            <span class="sample-type">Aquaculture · Multi-object Tracking</span>
-            <h4>Fish Tracking</h4>
-            <p>Blind-video tracking pipeline with persistent IDs, confidence scoring, track trace overlays, latency logging, dropped-frame accounting, and exportable session reports.</p>
-            <div class="sample-results">
-              <span><strong>51 FPS</strong> mean</span>
-              <span><strong>20.3 ms</strong> latency</span>
-              <span><strong>0</strong> dropped frames</span>
+          <article class="sample-slide">
+            <img src="assets/slide-fish-tracking.png" alt="Fish tracking output frame with visible tracked object">
+            <div class="slide-copy">
+              <span class="sample-type">Aquaculture · Multi-object Tracking</span>
+              <h4>Fish Tracking</h4>
+              <p>Blind-video tracking pipeline with persistent IDs, confidence overlays, track traces, latency logging, dropped-frame accounting and exportable session reports.</p>
+              <div class="sample-results"><span><strong>51 FPS</strong> mean</span><span><strong>20 ms</strong> latency</span><span><strong>0</strong> drops</span></div>
+              <div class="sample-tags"><span>ByteTrack</span><span>OpenCV</span><span>Streamlit</span><span>CSV export</span></div>
+              <a class="sample-action" href="assets/aquamass-tracking-demo.mp4" target="_blank">Watch result video</a>
             </div>
-            <div class="sample-tags"><span>ByteTrack</span><span>OpenCV</span><span>Streamlit</span><span>CSV export</span></div>
-            <a class="sample-action" href="assets/aquamass-tracking-demo.mp4" target="_blank">Watch result video</a>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img src="assets/sample-vision-cables.png" alt="Vision for Cables wire harness segmentation output">
-          <div class="sample-body">
-            <span class="sample-type">Industrial Vision · Inspection</span>
-            <h4>Vision for Cables</h4>
-            <p>Offline computer-vision inspection workflows for cable defects and wire harnesses: contour measurement, candidate defect marking, color segmentation, overlays, and CSV reports.</p>
-            <div class="sample-results">
-              <span><strong>4</strong> cable images</span>
-              <span><strong>6</strong> defects marked</span>
-              <span><strong>11</strong> wires segmented</span>
+          <article class="sample-slide">
+            <img src="assets/slide-fish-biomass.png" alt="Fish biomass estimation detection slide">
+            <div class="slide-copy">
+              <span class="sample-type">Aquaculture · Biomass Estimation</span>
+              <h4>Fish Biomass Estimation</h4>
+              <p>Underwater detection and calibrated biomass prototype using YOLO localization, geometric measurement, uncertainty reporting and explicit calibration boundaries.</p>
+              <div class="sample-results"><span><strong>0.995</strong> mAP50</span><span><strong>0.937</strong> mAP50-95</span><span><strong>0.998</strong> recall</span></div>
+              <div class="sample-tags"><span>YOLO11</span><span>OpenCV</span><span>Uncertainty</span><span>ONNX path</span></div>
             </div>
-            <div class="sample-tags"><span>OpenCV</span><span>Measurement</span><span>Segmentation</span><span>QA</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img src="assets/sample-apply-automatically.png" alt="Apply Automatically workflow result panel">
-          <div class="sample-body">
-            <span class="sample-type">Agentic Automation · Local LLM</span>
-            <h4>Apply Automatically</h4>
-            <p>Private job-search agent that fetches roles, scores fit and ATS coverage, explains apply decisions, tailors resumes, and turns recurring skill gaps into a learning queue.</p>
-            <div class="sample-results">
-              <span><strong>5</strong> job sources</span>
-              <span><strong>0</strong> cloud API cost</span>
-              <span><strong>DOCX</strong> tailoring</span>
+          <article class="sample-slide">
+            <img src="assets/slide-vision-cables.png" alt="Vision for Cables inspection slide">
+            <div class="slide-copy">
+              <span class="sample-type">Industrial Vision · Inspection</span>
+              <h4>Vision for Cables</h4>
+              <p>Offline computer-vision inspection for cable defects and wire harnesses, including contour measurement, candidate defect marking, segmentation overlays and CSV reports.</p>
+              <div class="sample-results"><span><strong>4</strong> cable images</span><span><strong>6</strong> defects</span><span><strong>11</strong> wires</span></div>
+              <div class="sample-tags"><span>OpenCV</span><span>Measurement</span><span>Segmentation</span><span>QA</span></div>
             </div>
-            <div class="sample-tags"><span>FastAPI</span><span>Next.js</span><span>Ollama</span><span>CI/CD-ready</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img class="result-img" src="assets/project-remote-dehazing.png" alt="Remote sensing dehazing project result panel">
-          <div class="sample-body">
-            <span class="sample-type">Remote Sensing · Image Restoration</span>
-            <h4>Remote Sensing Dehazing Engine</h4>
-            <p>Physics-inspired deep learning system for haze removal in aerial imagery, combining diffusion-state modeling, directional context, and error-map evaluation.</p>
-            <div class="sample-results">
-              <span><strong>32.20 dB</strong> PSNR</span>
-              <span><strong>0.980</strong> SSIM</span>
-              <span><strong>4</strong> benchmarks</span>
+          <article class="sample-slide">
+            <img src="assets/slide-apply-automatically.png" alt="Apply Automatically workflow slide">
+            <div class="slide-copy">
+              <span class="sample-type">Agentic Automation · Local LLM</span>
+              <h4>Apply Automatically</h4>
+              <p>Private job-search agent that fetches roles, scores fit and ATS coverage, explains apply decisions, tailors resumes and turns recurring skill gaps into a learning queue.</p>
+              <div class="sample-results"><span><strong>5</strong> sources</span><span><strong>0</strong> cloud API cost</span><span><strong>DOCX</strong> tailoring</span></div>
+              <div class="sample-tags"><span>FastAPI</span><span>Next.js</span><span>Ollama</span><span>CI/CD-ready</span></div>
             </div>
-            <div class="sample-tags"><span>Deep Learning</span><span>Remote Sensing</span><span>Restoration</span><span>ONNX path</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img class="result-img" src="assets/project-llm-text-detection.png" alt="AI-generated text detection validation result panel">
-          <div class="sample-body">
-            <span class="sample-type">LLMs · Robust Classification</span>
-            <h4>AI-Generated Text Detection</h4>
-            <p>Hybrid LLM classifier hardened with adversarial training and multi-task learning to detect machine-generated text under paraphrase and perturbation.</p>
-            <div class="sample-results">
-              <span><strong>94.2-96.1%</strong> accuracy</span>
-              <span><strong>5-fold</strong> validation</span>
-              <span><strong>FGSM</strong> training</span>
+          <article class="sample-slide">
+            <img src="assets/slide-remote-dehazing.png" alt="Remote sensing dehazing result slide">
+            <div class="slide-copy">
+              <span class="sample-type">Remote Sensing · Image Restoration</span>
+              <h4>Remote Sensing Dehazing</h4>
+              <p>Physics-inspired deep model for haze removal, structure recovery and error-map evaluation across aerial scenes, packaged as a deployable restoration engine.</p>
+              <div class="sample-results"><span><strong>32.20 dB</strong> PSNR</span><span><strong>0.980</strong> SSIM</span><span><strong>4</strong> benchmarks</span></div>
+              <div class="sample-tags"><span>Deep Learning</span><span>Remote Sensing</span><span>Restoration</span><span>ONNX</span></div>
             </div>
-            <div class="sample-tags"><span>LLMs</span><span>Adversarial ML</span><span>NLP</span><span>Data Science</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img class="result-img" src="assets/project-histopathology-classifier.png" alt="Transformer CNN visual classifier metrics panel">
-          <div class="sample-body">
-            <span class="sample-type">Computer Vision · Classification</span>
-            <h4>Transformer-CNN Visual Classifier</h4>
-            <p>EfficientNetV2 and Vision Transformer pipeline for multi-class visual pattern recognition, with training curves and confusion-matrix validation.</p>
-            <div class="sample-results">
-              <span><strong>99.83%</strong> binary accuracy</span>
-              <span><strong>98.10%</strong> multi-class</span>
-              <span><strong>8</strong> classes</span>
+          <article class="sample-slide">
+            <img src="assets/slide-llm-text-detection.png" alt="AI generated text detection slide">
+            <div class="slide-copy">
+              <span class="sample-type">LLMs · Robust Classification</span>
+              <h4>AI-Generated Text Detection</h4>
+              <p>Hybrid LLM classifier hardened with adversarial training and multi-task learning to detect machine-generated text under paraphrase and perturbation.</p>
+              <div class="sample-results"><span><strong>94.2-96.1%</strong> accuracy</span><span><strong>5-fold</strong> validation</span><span><strong>FGSM</strong> training</span></div>
+              <div class="sample-tags"><span>LLMs</span><span>Adversarial ML</span><span>NLP</span><span>Data Science</span></div>
             </div>
-            <div class="sample-tags"><span>EfficientNetV2</span><span>ViT</span><span>Classification</span><span>MLOps-ready</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img class="result-img" src="assets/project-mimo-antenna.png" alt="MIMO antenna S-parameter optimization result panel">
-          <div class="sample-body">
-            <span class="sample-type">RF Engineering · Optimization</span>
-            <h4>20-28 GHz MIMO Antenna Optimization</h4>
-            <p>Dual-element MIMO antenna design using a neutralization-line strategy to improve isolation across upper-K and lower-Ka operating bands.</p>
-            <div class="sample-results">
-              <span><strong>20.7-28.1</strong> GHz</span>
-              <span><strong>-43 dB</strong> isolation</span>
-              <span><strong>K/Ka</strong> bands</span>
+          <article class="sample-slide">
+            <img src="assets/slide-visual-classifier.png" alt="Transformer CNN classifier slide">
+            <div class="slide-copy">
+              <span class="sample-type">Computer Vision · Classification</span>
+              <h4>Transformer-CNN Visual Classifier</h4>
+              <p>EfficientNetV2 and Vision Transformer pipeline for multi-class visual pattern recognition with training curves, confusion-matrix validation and deployment-oriented model design.</p>
+              <div class="sample-results"><span><strong>99.83%</strong> binary</span><span><strong>98.10%</strong> multi-class</span><span><strong>8</strong> classes</span></div>
+              <div class="sample-tags"><span>EfficientNetV2</span><span>ViT</span><span>Classification</span><span>MLOps</span></div>
             </div>
-            <div class="sample-tags"><span>Simulation</span><span>S-Parameters</span><span>Optimization</span><span>RF</span></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="sample-card">
-          <img class="result-img" src="assets/project-multitask-vision.png" alt="Multi-task vision enhancement architecture result panel">
-          <div class="sample-body">
-            <span class="sample-type">Computer Vision · Multi-task Learning</span>
-            <h4>Multi-Task Vision Enhancement Network</h4>
-            <p>Joint super-resolution and segmentation architecture that combines attention, feature fusion, and SPP-LinkNet-style decoding for deployable visual enhancement.</p>
-            <div class="sample-results">
-              <span><strong>SR + Seg</strong> pipeline</span>
-              <span><strong>PSNR/SSIM</strong> eval</span>
-              <span><strong>IoU/Dice</strong> eval</span>
+          <article class="sample-slide">
+            <img src="assets/slide-mimo-antenna.png" alt="MIMO antenna optimization slide">
+            <div class="slide-copy">
+              <span class="sample-type">RF Engineering · Optimization</span>
+              <h4>20-28 GHz MIMO Antenna</h4>
+              <p>Dual-element MIMO antenna design using a neutralization-line strategy to improve isolation across upper-K and lower-Ka operating bands.</p>
+              <div class="sample-results"><span><strong>20.7-28.1</strong> GHz</span><span><strong>-43 dB</strong> isolation</span><span><strong>K/Ka</strong> bands</span></div>
+              <div class="sample-tags"><span>Simulation</span><span>S-Parameters</span><span>Optimization</span><span>RF</span></div>
             </div>
-            <div class="sample-tags"><span>Deep Learning</span><span>Segmentation</span><span>Super-resolution</span><span>ONNX</span></div>
-          </div>
-        </article>
+          </article>
+        </div>
+        <button class="carousel-btn carousel-next" type="button" onclick="moveSampleSlide(1)" aria-label="Next project">&#8250;</button>
       </div>
+      <div class="sample-dots" id="sample-dots" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -867,6 +828,54 @@
       // Scroll to just below tab bar
       var tabBar = document.getElementById('tab-bar');
       window.scrollTo({ top: tabBar.offsetTop + tabBar.offsetHeight - 10, behavior: 'smooth' });
+    }
+
+    var sampleTrack = document.getElementById('sample-track');
+    var sampleDots = document.getElementById('sample-dots');
+
+    function getSampleSlides() {
+      return Array.prototype.slice.call(document.querySelectorAll('.sample-slide'));
+    }
+
+    function updateSampleDots() {
+      if (!sampleTrack || !sampleDots) return;
+      var slides = getSampleSlides();
+      if (!sampleDots.children.length) {
+        slides.forEach(function(_, index) {
+          var dot = document.createElement('span');
+          dot.className = 'sample-dot';
+          dot.addEventListener('click', function() {
+            slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          });
+          sampleDots.appendChild(dot);
+        });
+      }
+      var center = sampleTrack.scrollLeft + sampleTrack.clientWidth / 2;
+      var active = 0;
+      slides.forEach(function(slide, index) {
+        var slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        if (Math.abs(slideCenter - center) < Math.abs((slides[active].offsetLeft + slides[active].offsetWidth / 2) - center)) {
+          active = index;
+        }
+      });
+      Array.prototype.forEach.call(sampleDots.children, function(dot, index) {
+        dot.classList.toggle('active', index === active);
+      });
+    }
+
+    function moveSampleSlide(direction) {
+      if (!sampleTrack) return;
+      var slide = sampleTrack.querySelector('.sample-slide');
+      var step = slide ? slide.offsetWidth + 22 : sampleTrack.clientWidth * 0.9;
+      sampleTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    if (sampleTrack) {
+      sampleTrack.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateSampleDots);
+      });
+      window.addEventListener('resize', updateSampleDots);
+      updateSampleDots();
     }
   </script>
 
