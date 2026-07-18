@@ -459,6 +459,10 @@ hr {
   object-position: center top;
   width: 100%;
 }
+.sample-card img.result-img {
+  object-fit: contain;
+  padding: 10px;
+}
 .sample-card-featured img {
   height: 340px;
 }
