@@ -580,6 +580,9 @@ hr {
   object-fit: contain;
   width: 100%;
 }
+.sample-slide img[src*="slide-fish-"] {
+  object-fit: cover;
+}
 .slide-copy {
   padding: 18px 20px 20px;
 }
