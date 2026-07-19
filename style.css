@@ -581,13 +581,13 @@ hr {
 .sample-slide > img {
   background: #111827;
   display: block;
-  height: 330px;
+  height: 420px;
   object-fit: contain;
   width: 100%;
 }
 .project-gallery {
   background: #111827;
-  height: 330px;
+  height: 420px;
   overflow: hidden;
   position: relative;
 }
@@ -661,7 +661,7 @@ hr {
   justify-content: center;
   line-height: 1;
   position: absolute;
-  top: 149px;
+  top: 194px;
   width: 46px;
   z-index: 5;
 }
@@ -708,7 +708,7 @@ hr {
   .sample-track { padding-left: 0; padding-right: 0; }
   .sample-slide { flex-basis: 100%; max-width: 100%; }
   .sample-slide > img,
-  .project-gallery { height: 200px; }
+  .project-gallery { height: 260px; }
   .carousel-btn {
     display: none;
   }
@@ -718,7 +718,7 @@ hr {
   .sample-heading p,
   .slide-copy p { font-size: 14px; }
   .sample-slide > img,
-  .project-gallery { height: 175px; }
+  .project-gallery { height: 220px; }
   .slide-copy { padding: 16px; }
 }
 

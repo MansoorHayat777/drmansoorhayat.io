@@ -679,11 +679,11 @@
           <article class="sample-slide">
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
-                <img src="assets/project-media/field-boundary-c081.png" alt="Predicted boundary mask, overlay and polygon vectors for the C081 scene">
-                <img src="assets/project-media/field-boundary-demo_area01.png" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 01 scene">
-                <img src="assets/project-media/field-boundary-demo_area02.png" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 02 scene">
-                <img src="assets/project-media/field-boundary-h6.png" alt="Predicted boundary mask, overlay and polygon vectors for the H6 scene">
-                <img src="assets/project-media/field-boundary-s10.png" alt="Predicted boundary mask, overlay and polygon vectors for the S10 scene">
+                <img src="assets/project-media/field-boundary-c081.jpg" alt="Predicted boundary mask, overlay and polygon vectors for the C081 scene">
+                <img src="assets/project-media/field-boundary-demo_area01.jpg" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 01 scene">
+                <img src="assets/project-media/field-boundary-demo_area02.jpg" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 02 scene">
+                <img src="assets/project-media/field-boundary-h6.jpg" alt="Predicted boundary mask, overlay and polygon vectors for the H6 scene">
+                <img src="assets/project-media/field-boundary-s10.jpg" alt="Predicted boundary mask, overlay and polygon vectors for the S10 scene">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous field-boundary image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next field-boundary image">&#8250;</button>
@@ -742,7 +742,7 @@
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
                 <img src="assets/project-media/tracking-demo-02.jpg" alt="Original fish tracking frame with detection box and live FPS overlay">
-                <img src="assets/project-media/tracking-demo-03.jpg" alt="Original fish tracking frame with persistent trajectory overlay">
+                <img src="assets/project-media/tracking-catfish-benchmark.jpg" alt="Same detector generalized to a second, clear-water catfish benchmark with 23 individually boxed fish">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish tracking image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish tracking image">&#8250;</button>
@@ -751,7 +751,7 @@
             <div class="slide-copy">
               <span class="sample-type">Aquaculture · Multi-object Tracking</span>
               <h4>Fish Tracking</h4>
-              <p>Blind-video tracking pipeline with persistent IDs, confidence overlays, track traces, latency logging, dropped-frame accounting and exportable session reports.</p>
+              <p>Blind-video tracking pipeline with persistent IDs, confidence overlays, track traces, latency logging, dropped-frame accounting and exportable session reports; the same detector generalizes to a second, clearer catfish benchmark with 20+ simultaneous individuals.</p>
               <div class="sample-results"><span><strong>51 FPS</strong> mean</span><span><strong>20 ms</strong> latency</span><span><strong>0</strong> drops</span></div>
               <div class="sample-tags"><span>ByteTrack</span><span>OpenCV</span><span>Streamlit</span><span>CSV export</span></div>
               <a class="sample-action" href="assets/aquamass-tracking-demo.mp4" target="_blank">Watch result video</a>
@@ -820,46 +820,137 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/project-media/super-resolution-evaluation.jpeg" alt="Original visual enhancement and segmentation comparison result">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/super-resolution-evaluation.jpeg" alt="Stereo-endoscopic super-resolution and surgical instrument segmentation comparison">
+                <img src="assets/project-media/sr-e-sevsr.png" alt="Edge-guided stereo endoscopic video super-resolution result versus best baseline">
+                <img src="assets/project-media/sr-hamsrnet.png" alt="Hybrid-attention multiscale endoscopic super-resolution result versus best baseline">
+                <img src="assets/project-media/sr-saliency-aware.jpg" alt="Saliency-aware super-resolution recovering readable signage text from a low-resolution stereo photo">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous super-resolution image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next super-resolution image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 4</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Computer Vision · Super-Resolution</span>
-              <h4>Super-Resolution and Segmentation</h4>
-              <p>Edge-aware image enhancement pipeline for recovering fine visual detail while preserving segmentation-ready structure, with ONNX deployment planning and latency-aware model design.</p>
-              <div class="sample-results"><span><strong>2x</strong> resolution</span><span><strong>95%</strong> IoU target</span><span><strong>30%</strong> latency cut</span></div>
-              <div class="sample-tags"><span>Super-resolution</span><span>Segmentation</span><span>Attention</span><span>ONNX</span></div>
+              <h4>Stereo &amp; Endoscopic Super-Resolution</h4>
+              <p>A line of five super-resolution networks (edge-guided video SR, hybrid-attention multiscale SR, saliency-aware SR, surgical-instrument-aware SR, and attention-based pathology SR), each benchmarked against 10+ published baselines on stereo and endoscopic imagery, plus general stereo photography.</p>
+              <div class="sample-results"><span><strong>46.9 dB</strong> best PSNR</span><span><strong>0.995</strong> best SSIM</span><span><strong>5</strong> SR models</span></div>
+              <div class="sample-tags"><span>Super-resolution</span><span>Attention</span><span>Stereo Vision</span><span>ONNX</span></div>
             </div>
           </article>
 
           <article class="sample-slide">
-            <img src="assets/project-media/llm-results.jpeg" alt="Original LLM five-fold validation accuracy results">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/llm-results.jpeg" alt="Original LLM five-fold validation accuracy results">
+                <img src="assets/project-media/llm-confusion-matrix.png" alt="Confusion matrices for human-written versus AI-generated text classification across three model variants">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous LLM text detection image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next LLM text detection image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">LLMs · Robust Classification</span>
               <h4>AI-Generated Text Detection</h4>
-              <p>Hybrid LLM classifier hardened with adversarial training and multi-task learning to detect machine-generated text under paraphrase and perturbation.</p>
+              <p>Hybrid LLM classifier hardened with adversarial (FGSM) training and multi-task learning to detect machine-generated text under paraphrase and perturbation, validated on tens of thousands of held-out samples per fold.</p>
               <div class="sample-results"><span><strong>94.2-96.1%</strong> accuracy</span><span><strong>5-fold</strong> validation</span><span><strong>FGSM</strong> training</span></div>
               <div class="sample-tags"><span>LLMs</span><span>Adversarial ML</span><span>NLP</span><span>Data Science</span></div>
             </div>
           </article>
 
           <article class="sample-slide">
-            <img src="assets/project-media/classifier-evaluation.jpeg" alt="Original visual classifier training and validation results">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/classifier-evaluation.jpeg" alt="Original visual classifier training and validation results">
+                <img src="assets/project-media/classifier-gradcam.jpg" alt="Grad-CAM saliency maps for all eight visual pattern classes showing where the classifier is looking">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous classifier image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next classifier image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Computer Vision · Classification</span>
               <h4>Transformer-CNN Visual Classifier</h4>
-              <p>EfficientNetV2 and Vision Transformer pipeline for multi-class visual pattern recognition with training curves, confusion-matrix validation and deployment-oriented model design.</p>
+              <p>EfficientNetV2 and Vision Transformer pipeline for multi-class visual pattern recognition with training curves, confusion-matrix validation, Grad-CAM interpretability across all classes, and deployment-oriented model design.</p>
               <div class="sample-results"><span><strong>99.83%</strong> binary</span><span><strong>98.10%</strong> multi-class</span><span><strong>8</strong> classes</span></div>
-              <div class="sample-tags"><span>EfficientNetV2</span><span>ViT</span><span>Classification</span><span>MLOps</span></div>
+              <div class="sample-tags"><span>EfficientNetV2</span><span>ViT</span><span>Grad-CAM</span><span>MLOps</span></div>
             </div>
           </article>
 
           <article class="sample-slide">
-            <img src="assets/project-media/mimo-result.png" alt="Original MIMO antenna S-parameter result">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/mimo-result.png" alt="Original MIMO antenna S-parameter result">
+                <img src="assets/project-media/mimo-radiation-pattern.png" alt="Measured E-plane and H-plane radiation pattern of the MIMO antenna element">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous MIMO antenna image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next MIMO antenna image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">RF Engineering · Optimization</span>
               <h4>20-28 GHz MIMO Antenna</h4>
-              <p>Dual-element MIMO antenna design using a neutralization-line strategy to improve isolation across upper-K and lower-Ka operating bands.</p>
+              <p>Dual-element MIMO antenna design using a neutralization-line strategy to improve isolation across upper-K and lower-Ka operating bands, validated with measured S-parameters and E-/H-plane radiation patterns.</p>
               <div class="sample-results"><span><strong>20.7-28.1</strong> GHz</span><span><strong>-43 dB</strong> isolation</span><span><strong>K/Ka</strong> bands</span></div>
               <div class="sample-tags"><span>Simulation</span><span>S-Parameters</span><span>Optimization</span><span>RF</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/cardiac-segmentation-acdc.png" alt="Cardiac MRI segmentation on ACDC: input, expert ground truth and model prediction">
+                <img src="assets/project-media/cardiac-segmentation-mscmrseg.png" alt="Cardiac MRI segmentation on MSCMRseg: input, expert ground truth and model prediction">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous cardiac segmentation image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next cardiac segmentation image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
+            <div class="slide-copy">
+              <span class="sample-type">Computer Vision · Medical Segmentation</span>
+              <h4>Cardiac MRI Segmentation</h4>
+              <p>Scribble-supervised GAN (SGGAB-GAN) for left-ventricle, myocardium and right-ventricle segmentation from cardiac MRI, using superpixel-guided graph-attention boundary refinement to close most of the gap to full pixel-level supervision at a fraction of the labeling cost.</p>
+              <div class="sample-results"><span><strong>0.902</strong> Dice (ACDC)</span><span><strong>0.871</strong> Dice (MSCMRseg)</span><span><strong>&lt;2%</strong> gap to full supervision</span></div>
+              <div class="sample-tags"><span>GAN</span><span>Scribble Supervision</span><span>Graph Attention</span><span>Segmentation</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/hyperspectral-forensic-architecture.jpg" alt="Episodic prototypical learning pipeline for multi-task hyperspectral forensic document analysis">
+                <img src="assets/project-media/hyperspectral-forensic-dataset.jpg" alt="Hyperspectral document cube construction and example spectral band slices from 478 to 901nm">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous hyperspectral forensics image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next hyperspectral forensics image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
+            <div class="slide-copy">
+              <span class="sample-type">Hyperspectral Imaging · Forensics</span>
+              <h4>Hyperspectral Forensic Document Analysis</h4>
+              <p>Few-shot episodic prototypical network learning a shared spectral-spatial embedding over 149-band hyperspectral document scans, tackling writer identification, writer verification, ink-mismatch detection, forgery detection, gender and age prediction in one model.</p>
+              <div class="sample-results"><span><strong>90.7%</strong> writer ID accuracy</span><span><strong>0.9936</strong> ink-mismatch AUC</span><span><strong>6</strong> forensic tasks</span></div>
+              <div class="sample-tags"><span>Few-shot Learning</span><span>Hyperspectral</span><span>Metric Learning</span><span>Forensics</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/colorectal-gan-architecture.jpg" alt="Cross-attention patch fusion generator architecture for few-shot colorectal tissue generation">
+                <img src="assets/project-media/colorectal-gan-results.jpg" alt="Synthetic colorectal histopathology tissue patches from cross-attention patch fusion versus LoFGAN and XM-GAN baselines">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous tissue generation image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next tissue generation image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
+            <div class="slide-copy">
+              <span class="sample-type">Generative Vision · Few-Shot Synthesis</span>
+              <h4>Few-Shot Colorectal Tissue Generation</h4>
+              <p>Cross-attention patch fusion GAN that synthesizes class-conditioned histopathology tissue patches from only a handful of expert-labeled references, augmenting rare-pattern training data without replacing expert labels.</p>
+              <div class="sample-results"><span><strong>4.7%</strong> lower FID</span><span><strong>22%</strong> higher LPIPS diversity</span><span><strong>+4.9pt</strong> classifier accuracy</span></div>
+              <div class="sample-tags"><span>GAN</span><span>Few-shot Learning</span><span>Cross-Attention</span><span>Data Augmentation</span></div>
             </div>
           </article>
         </div>
