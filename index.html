@@ -927,8 +927,41 @@
       });
     }
 
+    function getActiveSlideIndex() {
+      var slides = getSampleSlides();
+      var center = sampleTrack.scrollLeft + sampleTrack.clientWidth / 2;
+      var active = 0;
+      slides.forEach(function(slide, index) {
+        var slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        if (Math.abs(slideCenter - center) < Math.abs((slides[active].offsetLeft + slides[active].offsetWidth / 2) - center)) {
+          active = index;
+        }
+      });
+      return active;
+    }
+
+    function setGalleryImage(gallery, index) {
+      var track = gallery.querySelector('.project-gallery-track');
+      var images = track.querySelectorAll('img');
+      var next = ((index % images.length) + images.length) % images.length;
+      gallery.setAttribute('data-current', next);
+      track.style.transform = 'translateX(-' + (next * 100) + '%)';
+      gallery.querySelector('.gallery-count b').textContent = next + 1;
+    }
+
+    function moveProjectImage(button, direction) {
+      var gallery = button.parentNode;
+      var current = Number(gallery.getAttribute('data-current') || 0);
+      setGalleryImage(gallery, current + direction);
+    }
+
     function moveSampleSlide(direction, fromAutoplay) {
       if (!sampleTrack) return;
+      var leavingSlide = getSampleSlides()[getActiveSlideIndex()];
+      if (leavingSlide) {
+        var leavingGallery = leavingSlide.querySelector('.project-gallery');
+        if (leavingGallery) setGalleryImage(leavingGallery, 0);
+      }
       var slide = sampleTrack.querySelector('.sample-slide');
       var step = slide ? slide.offsetWidth : sampleTrack.clientWidth;
       var maxScroll = sampleTrack.scrollWidth - sampleTrack.clientWidth;
@@ -942,28 +975,31 @@
       if (!fromAutoplay) restartSampleAutoplay();
     }
 
+    function advanceSampleCycle() {
+      if (!sampleTrack || document.hidden) return;
+      var activeSlide = getSampleSlides()[getActiveSlideIndex()];
+      if (!activeSlide) return;
+      var gallery = activeSlide.querySelector('.project-gallery');
+      if (gallery) {
+        var images = gallery.querySelectorAll('.project-gallery-track img');
+        var current = Number(gallery.getAttribute('data-current') || 0);
+        if (current < images.length - 1) {
+          setGalleryImage(gallery, current + 1);
+          return;
+        }
+      }
+      moveSampleSlide(1, true);
+    }
+
     function startSampleAutoplay() {
       if (!sampleTrack) return;
       clearInterval(sampleAutoplayTimer);
-      sampleAutoplayTimer = setInterval(function() {
-        if (!document.hidden) moveSampleSlide(1, true);
-      }, 2000);
+      sampleAutoplayTimer = setInterval(advanceSampleCycle, 2000);
     }
 
     function restartSampleAutoplay() {
       clearInterval(sampleAutoplayTimer);
       setTimeout(startSampleAutoplay, 2000);
-    }
-
-    function moveProjectImage(button, direction) {
-      var gallery = button.parentNode;
-      var track = gallery.querySelector('.project-gallery-track');
-      var images = track.querySelectorAll('img');
-      var current = Number(gallery.getAttribute('data-current') || 0);
-      var next = (current + direction + images.length) % images.length;
-      gallery.setAttribute('data-current', next);
-      track.style.transform = 'translateX(-' + (next * 100) + '%)';
-      gallery.querySelector('.gallery-count b').textContent = next + 1;
     }
 
     if (sampleTrack) {
