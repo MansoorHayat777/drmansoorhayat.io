@@ -677,10 +677,19 @@
         <button class="carousel-btn carousel-prev" type="button" onclick="moveSampleSlide(-1)" aria-label="Previous project">&#8249;</button>
         <div class="sample-track" id="sample-track">
           <article class="sample-slide">
-            <img src="assets/slide-sga-field-boundary.png" alt="SGA RGB orthomosaic field boundary detection output">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/field-boundary-c081.png" alt="Original orthomosaic with predicted field boundaries for the C081 scene">
+                <img src="assets/project-media/field-boundary-h6.png" alt="Original orthomosaic with predicted field boundaries for the H6 scene">
+                <img src="assets/project-media/field-boundary-s10.png" alt="Original orthomosaic with predicted field boundaries for the S10 scene">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous field-boundary image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next field-boundary image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 3</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">GeoAI · RGB Orthomosaic Delineation</span>
-              <h4>SGA Field Boundary Detection</h4>
+              <h4>Field Boundary Detection</h4>
               <p>Domain-adapted nnU-Net pipeline for high-resolution drone/satellite orthomosaics, producing masks, overlays and GeoJSON polygon vectors for field-boundary delineation across five scenes.</p>
               <div class="sample-results"><span><strong>5</strong> scenes</span><span><strong>nnU-Net</strong> model</span><span><strong>GeoJSON</strong> vectors</span></div>
               <div class="sample-tags"><span>GeoAI</span><span>Segmentation</span><span>Multi-scale inference</span><span>Azure-ready</span></div>
@@ -699,7 +708,16 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-fieldsafe-agri.png" alt="FieldSafe agriculture perception dashboard slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/ptx-dashboard.png" alt="Original FieldSafe training dashboard with validation metrics">
+                <img src="assets/project-media/ptx-detection.jpg" alt="Original FieldSafe validation detection output">
+                <img src="assets/project-media/ptx-training-results.png" alt="Original FieldSafe training curves">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous PTX image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next PTX image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 3</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Agriculture · Robot Safety Perception</span>
               <h4>PTX / FieldSafe Agri</h4>
@@ -710,7 +728,15 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-fish-tracking.png" alt="Fish tracking output frame with visible tracked object">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/tracking-demo-02.jpg" alt="Original fish tracking frame with detection box and live FPS overlay">
+                <img src="assets/project-media/tracking-demo-03.jpg" alt="Original fish tracking frame with persistent trajectory overlay">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish tracking image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish tracking image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Aquaculture · Multi-object Tracking</span>
               <h4>Fish Tracking</h4>
@@ -722,7 +748,15 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-fish-biomass.png" alt="Fish biomass estimation detection slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/fish-model-demo-02.jpg" alt="Original calibrated underwater fish capture used in the biomass prototype">
+                <img src="assets/project-media/fish-model-demo-03.jpg" alt="Original underwater fish capture used in the biomass prototype">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish biomass image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish biomass image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Aquaculture · Biomass Estimation</span>
               <h4>Fish Biomass Estimation</h4>
@@ -733,7 +767,16 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-vision-cables.png" alt="Vision for Cables inspection slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/cables-defect-result.png" alt="Original cable inspection output with detected defect and measured segments">
+                <img src="assets/project-media/cables-defect-result-2.png" alt="Original cable inspection result with automated defect annotation">
+                <img src="assets/project-media/cables-segmentation-result.png" alt="Original wire-harness segmentation overlay">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous cable-inspection image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next cable-inspection image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 3</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Industrial Vision · Inspection</span>
               <h4>Vision for Cables</h4>
@@ -879,6 +922,17 @@
       var slide = sampleTrack.querySelector('.sample-slide');
       var step = slide ? slide.offsetWidth : sampleTrack.clientWidth;
       sampleTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    function moveProjectImage(button, direction) {
+      var gallery = button.parentNode;
+      var track = gallery.querySelector('.project-gallery-track');
+      var images = track.querySelectorAll('img');
+      var current = Number(gallery.getAttribute('data-current') || 0);
+      var next = (current + direction + images.length) % images.length;
+      gallery.setAttribute('data-current', next);
+      track.style.transform = 'translateX(-' + (next * 100) + '%)';
+      gallery.querySelector('.gallery-count b').textContent = next + 1;
     }
 
     if (sampleTrack) {
