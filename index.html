@@ -679,18 +679,20 @@
           <article class="sample-slide">
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
-                <img src="assets/project-media/field-boundary-c081.png" alt="Original orthomosaic with predicted field boundaries for the C081 scene">
-                <img src="assets/project-media/field-boundary-h6.png" alt="Original orthomosaic with predicted field boundaries for the H6 scene">
-                <img src="assets/project-media/field-boundary-s10.png" alt="Original orthomosaic with predicted field boundaries for the S10 scene">
+                <img src="assets/project-media/field-boundary-c081.png" alt="Predicted boundary mask, overlay and polygon vectors for the C081 scene">
+                <img src="assets/project-media/field-boundary-demo_area01.png" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 01 scene">
+                <img src="assets/project-media/field-boundary-demo_area02.png" alt="Predicted boundary mask, overlay and polygon vectors for the Demo Area 02 scene">
+                <img src="assets/project-media/field-boundary-h6.png" alt="Predicted boundary mask, overlay and polygon vectors for the H6 scene">
+                <img src="assets/project-media/field-boundary-s10.png" alt="Predicted boundary mask, overlay and polygon vectors for the S10 scene">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous field-boundary image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next field-boundary image">&#8250;</button>
-              <span class="gallery-count"><b>1</b> / 3</span>
+              <span class="gallery-count"><b>1</b> / 5</span>
             </div>
             <div class="slide-copy">
               <span class="sample-type">GeoAI · RGB Orthomosaic Delineation</span>
               <h4>Field Boundary Detection</h4>
-              <p>Domain-adapted nnU-Net pipeline for high-resolution drone/satellite orthomosaics, producing masks, overlays and GeoJSON polygon vectors for field-boundary delineation across five scenes.</p>
+              <p>Domain-adapted nnU-Net pipeline for high-resolution drone/satellite orthomosaics: a learned input bridge maps 3-channel RGB into the pretrained model's 8-channel Sentinel-2 feature space, with multi-scale patch inference producing boundary masks, overlays and GeoJSON polygon vectors across five zero-shot scenes.</p>
               <div class="sample-results"><span><strong>5</strong> scenes</span><span><strong>nnU-Net</strong> model</span><span><strong>GeoJSON</strong> vectors</span></div>
               <div class="sample-tags"><span>GeoAI</span><span>Segmentation</span><span>Multi-scale inference</span><span>Azure-ready</span></div>
             </div>
@@ -759,8 +761,8 @@
           <article class="sample-slide">
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
-                <img src="assets/project-media/fish-model-demo-02.jpg" alt="Original calibrated underwater fish capture used in the biomass prototype">
-                <img src="assets/project-media/fish-model-demo-03.jpg" alt="Original underwater fish capture used in the biomass prototype">
+                <img src="assets/project-media/fish-biomass-result-1.jpg" alt="Live YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
+                <img src="assets/project-media/fish-biomass-result-2.jpg" alt="Second live YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish biomass image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish biomass image">&#8250;</button>
@@ -769,7 +771,7 @@
             <div class="slide-copy">
               <span class="sample-type">Aquaculture · Biomass Estimation</span>
               <h4>Fish Biomass Estimation</h4>
-              <p>Underwater detection and calibrated biomass prototype using YOLO localization, geometric measurement, uncertainty reporting and explicit calibration boundaries.</p>
+              <p>Underwater detection and calibrated biomass prototype using YOLO11 localization, geometric length/thickness measurement, an allometric mass model, and explicit uncertainty reporting instead of overconfident point estimates.</p>
               <div class="sample-results"><span><strong>0.995</strong> mAP50</span><span><strong>0.937</strong> mAP50-95</span><span><strong>0.998</strong> recall</span></div>
               <div class="sample-tags"><span>YOLO11</span><span>OpenCV</span><span>Uncertainty</span><span>ONNX path</span></div>
             </div>
