@@ -791,8 +791,8 @@
           <article class="sample-slide">
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
-                <img src="assets/project-media/fish-biomass-result-1.jpg" alt="Live YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
-                <img src="assets/project-media/fish-biomass-result-2.jpg" alt="Full side-profile YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
+                <img src="assets/project-media/fish-biomass-result-1.jpg" alt="Live YOLO11 detection of two fish in the same tank, each with bounding box, confidence and estimated length/weight overlay">
+                <img src="assets/project-media/fish-biomass-result-2.jpg" alt="Second live YOLO11 detection of two fish in the same tank, each with bounding box, confidence and estimated length/weight overlay">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish biomass image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish biomass image">&#8250;</button>
@@ -1126,12 +1126,12 @@
     function startSampleAutoplay() {
       if (!sampleTrack) return;
       clearInterval(sampleAutoplayTimer);
-      sampleAutoplayTimer = setInterval(advanceSampleCycle, 2000);
+      sampleAutoplayTimer = setInterval(advanceSampleCycle, 3000);
     }
 
     function restartSampleAutoplay() {
       clearInterval(sampleAutoplayTimer);
-      setTimeout(startSampleAutoplay, 2000);
+      setTimeout(startSampleAutoplay, 3000);
     }
 
     if (sampleTrack) {
