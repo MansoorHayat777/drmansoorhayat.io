@@ -697,13 +697,22 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-talktoclient.png" alt="TalkToClient live AI CRM website slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/sitevision-real-plan-overlay.png" alt="Original SiteVision real-plan segmentation output with detected building footprint">
+                <img src="assets/project-media/sitevision-real-plan-input.png" alt="Original public civil engineering plan used for SiteVision validation">
+                <img src="assets/project-media/sitevision-weston-validation.png" alt="Original second real civil plan used to validate scope boundaries">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous SiteVision result">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next SiteVision result">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 3</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Live Product · AI CRM</span>
-              <h4>TalkToClient</h4>
-              <p>AI CRM platform for service businesses: omnichannel inbox, AI voice agent, workflow automation, scheduling, follow-up and pipeline forecasting in a production-facing website.</p>
-              <div class="sample-results"><span><strong>100+</strong> languages</span><span><strong>24/7</strong> AI answering</span><span><strong>5 min</strong> setup</span></div>
-              <div class="sample-tags"><span>AI Voice</span><span>CRM</span><span>Automation</span><span>Integrations</span></div>
+              <h4>SiteVision</h4>
+              <p>Multi-route segmentation system for site plans: color-plan parsing, line-art analysis, real CAD-plan footprint extraction and aerial parking detection, with automatic pipeline routing and interactive GIS exploration.</p>
+              <div class="sample-results"><span><strong>4</strong> analysis routes</span><span><strong>0.94</strong> plan confidence</span><span><strong>2,136.6</strong> m2 footprint</span></div>
+              <div class="sample-tags"><span>U-Net</span><span>OpenCV</span><span>GIS</span><span>FastAPI</span></div>
             </div>
           </article>
 
@@ -787,18 +796,18 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-apply-automatically.png" alt="Apply Automatically workflow slide">
+            <img src="assets/project-media/talktoclient-live.png" alt="Live TalkToClient product website">
             <div class="slide-copy">
               <span class="sample-type">Agentic Automation · Local LLM</span>
-              <h4>Apply Automatically</h4>
-              <p>Private job-search agent that fetches roles, scores fit and ATS coverage, explains apply decisions, tailors resumes and turns recurring skill gaps into a learning queue.</p>
-              <div class="sample-results"><span><strong>5</strong> sources</span><span><strong>0</strong> cloud API cost</span><span><strong>DOCX</strong> tailoring</span></div>
-              <div class="sample-tags"><span>FastAPI</span><span>Next.js</span><span>Ollama</span><span>CI/CD-ready</span></div>
+              <h4>TalkToClient</h4>
+              <p>Production AI CRM for service businesses, combining an omnichannel inbox, voice agent, scheduling, follow-up automation and pipeline operations.</p>
+              <div class="sample-results"><span><strong>100+</strong> languages</span><span><strong>24/7</strong> AI answering</span><span><strong>5 min</strong> setup</span></div>
+              <div class="sample-tags"><span>AI Voice</span><span>CRM</span><span>Automation</span><span>Integrations</span></div>
             </div>
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-remote-dehazing.png" alt="Remote sensing dehazing result slide">
+            <img src="assets/project-media/remote-dehazing-evaluation.jpeg" alt="Original remote-sensing dehazing evaluation across hazy aerial scenes">
             <div class="slide-copy">
               <span class="sample-type">Remote Sensing · Image Restoration</span>
               <h4>Remote Sensing Dehazing</h4>
@@ -809,7 +818,7 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-super-resolution.png" alt="Super-resolution enhancement and segmentation pipeline slide">
+            <img src="assets/project-media/super-resolution-evaluation.jpeg" alt="Original visual enhancement and segmentation comparison result">
             <div class="slide-copy">
               <span class="sample-type">Computer Vision · Super-Resolution</span>
               <h4>Super-Resolution and Segmentation</h4>
@@ -820,7 +829,7 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-llm-text-detection.png" alt="AI generated text detection slide">
+            <img src="assets/project-media/llm-results.jpeg" alt="Original LLM five-fold validation accuracy results">
             <div class="slide-copy">
               <span class="sample-type">LLMs · Robust Classification</span>
               <h4>AI-Generated Text Detection</h4>
@@ -831,7 +840,7 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-visual-classifier.png" alt="Transformer CNN classifier slide">
+            <img src="assets/project-media/classifier-evaluation.jpeg" alt="Original visual classifier training and validation results">
             <div class="slide-copy">
               <span class="sample-type">Computer Vision · Classification</span>
               <h4>Transformer-CNN Visual Classifier</h4>
@@ -842,7 +851,7 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/slide-mimo-antenna.png" alt="MIMO antenna optimization slide">
+            <img src="assets/project-media/mimo-result.png" alt="Original MIMO antenna S-parameter result">
             <div class="slide-copy">
               <span class="sample-type">RF Engineering · Optimization</span>
               <h4>20-28 GHz MIMO Antenna</h4>
@@ -886,6 +895,7 @@
 
     var sampleTrack = document.getElementById('sample-track');
     var sampleDots = document.getElementById('sample-dots');
+    var sampleAutoplayTimer = null;
 
     function getSampleSlides() {
       return Array.prototype.slice.call(document.querySelectorAll('.sample-slide'));
@@ -917,11 +927,32 @@
       });
     }
 
-    function moveSampleSlide(direction) {
+    function moveSampleSlide(direction, fromAutoplay) {
       if (!sampleTrack) return;
       var slide = sampleTrack.querySelector('.sample-slide');
       var step = slide ? slide.offsetWidth : sampleTrack.clientWidth;
-      sampleTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+      var maxScroll = sampleTrack.scrollWidth - sampleTrack.clientWidth;
+      if (direction > 0 && sampleTrack.scrollLeft >= maxScroll - step / 2) {
+        sampleTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else if (direction < 0 && sampleTrack.scrollLeft <= step / 2) {
+        sampleTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        sampleTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+      }
+      if (!fromAutoplay) restartSampleAutoplay();
+    }
+
+    function startSampleAutoplay() {
+      if (!sampleTrack) return;
+      clearInterval(sampleAutoplayTimer);
+      sampleAutoplayTimer = setInterval(function() {
+        if (!document.hidden) moveSampleSlide(1, true);
+      }, 2000);
+    }
+
+    function restartSampleAutoplay() {
+      clearInterval(sampleAutoplayTimer);
+      setTimeout(startSampleAutoplay, 2000);
     }
 
     function moveProjectImage(button, direction) {
@@ -939,9 +970,20 @@
       sampleTrack.addEventListener('scroll', function() {
         window.requestAnimationFrame(updateSampleDots);
       });
+      sampleTrack.addEventListener('mouseenter', function() { clearInterval(sampleAutoplayTimer); });
+      sampleTrack.addEventListener('mouseleave', restartSampleAutoplay);
       window.addEventListener('resize', updateSampleDots);
       updateSampleDots();
+      startSampleAutoplay();
     }
+
+    document.querySelectorAll('.sample-slide').forEach(function(slide) {
+      var title = slide.querySelector('h4');
+      var type = slide.querySelector('.sample-type');
+      if (!title || !type) return;
+      if (title.textContent === 'SiteVision') type.textContent = 'Geospatial CV / Site-Plan Segmentation';
+      if (title.textContent === 'TalkToClient') type.textContent = 'Live Product / AI CRM';
+    });
   </script>
 
 </body>
