@@ -741,7 +741,37 @@
           <article class="sample-slide">
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
-                <img src="assets/project-media/tracking-demo-02.jpg" alt="Original fish tracking frame with detection box and live FPS overlay">
+                <img src="assets/project-media/wheat-head-detection-1.jpg" alt="YOLOv8 wheat head detection with dense bounding boxes and confidence scores on green wheat heads">
+                <img src="assets/project-media/wheat-head-detection-2.jpg" alt="YOLOv8 wheat head detection on a mature, dry-field growth stage">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous wheat head detection image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next wheat head detection image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 2</span>
+            </div>
+            <div class="slide-copy">
+              <span class="sample-type">Agriculture · Dense Object Detection</span>
+              <h4>Wheat Head Detection</h4>
+              <p>Enhanced YOLOv8x (attention, residual dense blocks, ASPP multi-scale context) for detecting densely packed, visually repetitive wheat heads on the Global Wheat Head Detection dataset, across varying growth stages and lighting.</p>
+              <div class="sample-results"><span><strong>0.942</strong> mAP50</span><span><strong>0.916</strong> precision</span><span><strong>41k+</strong> annotated heads</span></div>
+              <div class="sample-tags"><span>YOLOv8x</span><span>Attention</span><span>ASPP</span><span>Dense Detection</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
+            <img src="assets/project-media/fhb-farmer-report.jpg" alt="Fusarium head blight classifier output card and an automatically generated plain-language farmer report">
+            <div class="slide-copy">
+              <span class="sample-type">Agriculture · Disease Classification + LLM Reporting</span>
+              <h4>Fusarium Head Blight Detection &amp; Farmer Reporting</h4>
+              <p>EfficientNet-B4 classifier (CBAM + residual dense blocks + ASPP) for wheat Fusarium Head Blight, with a calibrated decision threshold and an OpenAI API layer that turns raw model output into a plain-language, decision-support report for non-specialist farmers.</p>
+              <div class="sample-results"><span><strong>80.9%</strong> accuracy</span><span><strong>0.834</strong> F1-score</span><span><strong>LLM</strong> farmer reports</span></div>
+              <div class="sample-tags"><span>EfficientNet-B4</span><span>CBAM</span><span>LLM Integration</span><span>Decision Support</span></div>
+            </div>
+          </article>
+
+          <article class="sample-slide">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/tracking-demo-02.jpg" alt="BrackishMOT detection frame with 14 fish individually boxed near a calibration target">
                 <img src="assets/project-media/tracking-catfish-benchmark.jpg" alt="Same detector generalized to a second, clear-water catfish benchmark with 23 individually boxed fish">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish tracking image">&#8249;</button>
@@ -762,7 +792,7 @@
             <div class="project-gallery" data-gallery>
               <div class="project-gallery-track">
                 <img src="assets/project-media/fish-biomass-result-1.jpg" alt="Live YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
-                <img src="assets/project-media/fish-biomass-result-2.jpg" alt="Second live YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
+                <img src="assets/project-media/fish-biomass-result-2.jpg" alt="Full side-profile YOLO11 fish detection with bounding box, confidence and estimated length/weight overlay">
               </div>
               <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous fish biomass image">&#8249;</button>
               <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next fish biomass image">&#8250;</button>
@@ -809,12 +839,21 @@
           </article>
 
           <article class="sample-slide">
-            <img src="assets/project-media/remote-dehazing-evaluation.jpeg" alt="Original remote-sensing dehazing evaluation across hazy aerial scenes">
+            <div class="project-gallery" data-gallery>
+              <div class="project-gallery-track">
+                <img src="assets/project-media/remote-dehazing-evaluation.jpeg" alt="Original remote-sensing dehazing evaluation across hazy aerial scenes with gradient and contrast restoration maps">
+                <img src="assets/project-media/dehazing-baseline-comparison.jpg" alt="DSCH-Net dehazing result benchmarked against six published baseline methods with error heatmaps">
+                <img src="assets/project-media/dehazing-before-after.jpg" alt="Haze versus dehazed satellite scenes with CIELAB color-difference maps">
+              </div>
+              <button class="gallery-control gallery-prev" type="button" onclick="moveProjectImage(this, -1)" aria-label="Previous dehazing image">&#8249;</button>
+              <button class="gallery-control gallery-next" type="button" onclick="moveProjectImage(this, 1)" aria-label="Next dehazing image">&#8250;</button>
+              <span class="gallery-count"><b>1</b> / 3</span>
+            </div>
             <div class="slide-copy">
               <span class="sample-type">Remote Sensing · Image Restoration</span>
               <h4>Remote Sensing Dehazing</h4>
-              <p>Physics-inspired deep model for haze removal, structure recovery and error-map evaluation across aerial scenes, packaged as a deployable restoration engine.</p>
-              <div class="sample-results"><span><strong>32.20 dB</strong> PSNR</span><span><strong>0.980</strong> SSIM</span><span><strong>4</strong> benchmarks</span></div>
+              <p>Physics-inspired diffusion-state-contextual hybrid network (DSCH-Net) for haze removal on satellite imagery, benchmarked against six published baselines with per-pixel error and CIELAB color-difference maps.</p>
+              <div class="sample-results"><span><strong>32.20 dB</strong> PSNR</span><span><strong>0.980</strong> SSIM</span><span><strong>6</strong> baselines beaten</span></div>
               <div class="sample-tags"><span>Deep Learning</span><span>Remote Sensing</span><span>Restoration</span><span>ONNX</span></div>
             </div>
           </article>
